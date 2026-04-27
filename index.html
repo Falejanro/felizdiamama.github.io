@@ -151,7 +151,6 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-
             h1 {
                 font-size: 28px;
             }
@@ -176,7 +175,6 @@
         }
 
         @media (max-width: 400px) {
-
             h1 {
                 font-size: 24px;
             }
@@ -201,7 +199,7 @@
         </div>
     </div>
 
-    <!-- MENSAJE -->
+    <!-- MENSAJE INICIAL -->
 
     <div class="section hero-bg bg4">
         <div class="overlay"></div>
@@ -215,7 +213,22 @@
         </div>
     </div>
 
-    <!-- FONDO -->
+    <!-- NUEVO 1 -->
+
+    <div class="section hero-bg bg2">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Mamá…<br><br>
+                aunque aún soy pequeño,<br>
+                ya sé reconocer tu voz,<br>
+                tus abrazos,<br>
+                y la forma en la que me cuidas… ❤️
+            </p>
+        </div>
+    </div>
+
+    <!-- ORIGINAL -->
 
     <div class="section hero-bg bg2">
         <div class="overlay"></div>
@@ -229,7 +242,21 @@
         </div>
     </div>
 
-    <!-- FONDO -->
+    <!-- NUEVO 2 -->
+
+    <div class="section hero-bg bg3">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Cuando tengo sueño,<br>
+                cuando lloro,<br>
+                o cuando no entiendo el mundo…<br><br>
+                tú siempre estás ahí para mí 💕
+            </p>
+        </div>
+    </div>
+
+    <!-- ORIGINAL -->
 
     <div class="section hero-bg bg3">
         <div class="overlay"></div>
@@ -242,7 +269,23 @@
         </div>
     </div>
 
-    <!-- EXTRA -->
+    <!-- NUEVO 3 -->
+
+    <div class="section hero-bg bg5">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Eres una mamá increíble…<br><br>
+                trabajadora,<br>
+                alegre,<br>
+                divertida…<br><br>
+                y tienes algo muy especial…<br>
+                una paz que me hace sentir seguro ❤️
+            </p>
+        </div>
+    </div>
+
+    <!-- ORIGINAL -->
 
     <div class="section hero-bg bg5">
         <div class="overlay"></div>
@@ -255,6 +298,34 @@
         </div>
     </div>
 
+    <!-- NUEVO 4 -->
+
+    <div class="section hero-bg bg4">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Tal vez aún no puedo decir muchas palabras…<br><br>
+                pero mi corazón ya sabe algo…<br><br>
+                que tú eres todo para mí 💖
+            </p>
+        </div>
+    </div>
+
+    <!-- NUEVO 5 -->
+
+    <div class="section hero-bg bg2">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Me gusta cuando me abrazas,<br>
+                cuando me miras,<br>
+                cuando sonríes conmigo…<br><br>
+                porque en esos momentos,<br>
+                siento que no necesito nada más ❤️
+            </p>
+        </div>
+    </div>
+
     <!-- FINAL -->
 
     <div class="section hero-bg bg6">
@@ -262,7 +333,7 @@
         <div class="content fade">
             <h1>Mamá… ❤️</h1>
 
-
+            ```
             <p>
                 Eres mi lugar favorito en el mundo 💕<br>
                 Te amo muchísimo
@@ -275,21 +346,26 @@
                 tu Oliver 👶
             </p>
         </div>
-
+        ```
 
     </div>
 
     <script>
         const elements = document.querySelectorAll('.fade');
 
-        window.addEventListener('scroll', () => {
-            elements.forEach(el => {
-                const top = el.getBoundingClientRect().top;
-                if (top < window.innerHeight - 100) {
-                    el.classList.add('show');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.intersectionRatio > 0.4) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
                 }
             });
+        }, {
+            threshold: [0, 0.4, 1]
         });
+
+        elements.forEach(el => observer.observe(el));
 
         function mostrar() {
             document.getElementById("mensaje").style.display = "block";
