@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mamá ❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d0d0f;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* fondo elegante */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 80, 120, 0.2), transparent);
+            top: -100px;
+            right: -100px;
+            filter: blur(120px);
+        }
+
+        /* secciones */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* fondo */
+        .hero-bg {
+            position: relative;
+        }
+
+        /* overlay */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* contenido */
+        .content {
+            max-width: 500px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* texto */
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* animación inicial */
+        .hero {
+            animation: fadeHero 1.2s ease;
+        }
+
+        @keyframes fadeHero {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* animaciones scroll */
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.2s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* botón */
+        button {
+            margin-top: 30px;
+            padding: 14px 28px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: white;
+            color: black;
+        }
+
+        /* FONDOS */
+        .bg1 {
+            background: url('liza 1.jpg') center/cover no-repeat;
+        }
+
+        .bg2 {
+            background: url('liza 2.jpg') center/cover no-repeat;
+        }
+
+        .bg3 {
+            background: url('liza 3.jpg') center/cover no-repeat;
+        }
+
+        .bg4 {
+            background: url('liza 4.jpg') center/cover no-repeat;
+        }
+
+        .bg5 {
+            background: url('liza 5.jpg') center/cover no-repeat;
+        }
+
+        .bg6 {
+            background: url('liza 6.jpg') center/cover no-repeat;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 15px;
+                padding: 0 10px;
+            }
+
+            .section {
+                padding: 30px 15px;
+            }
+
+            .hero-bg {
+                background-position: center top;
+            }
+
+            button {
+                width: 100%;
+                max-width: 260px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <div class="section hero-bg bg1">
+        <div class="overlay"></div>
+        <div class="content hero">
+            <h1>Feliz Día de la Madre ❤️</h1>
+            <p>Para alguien que lo es todo…</p>
+        </div>
+    </div>
+
+    <!-- MENSAJE -->
+
+    <div class="section hero-bg bg4">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p style="font-size:18px; color:white;">
+                Hola mamá… 👶<br><br>
+                Soy Oliver…<br><br>
+                Todavía soy pequeñito,<br>
+                pero ya siento algo muy especial contigo…
+            </p>
+        </div>
+    </div>
+
+    <!-- FONDO -->
+
+    <div class="section hero-bg bg2">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Tu amor está en todo…<br>
+                en cada abrazo,<br>
+                en cada sonrisa,<br>
+                y en cada momento en el que me cuidas ❤️
+            </p>
+        </div>
+    </div>
+
+    <!-- FONDO -->
+
+    <div class="section hero-bg bg3">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Sé que eres muy fuerte…<br>
+                trabajas, luchas<br>
+                y aun así siempre estás para mí 💕
+            </p>
+        </div>
+    </div>
+
+    <!-- EXTRA -->
+
+    <div class="section hero-bg bg5">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <p>
+                Me encanta estar contigo…<br>
+                porque tu alegría me hace feliz<br>
+                y tu paz me hace sentir seguro ❤️
+            </p>
+        </div>
+    </div>
+
+    <!-- FINAL -->
+
+    <div class="section hero-bg bg6">
+        <div class="overlay"></div>
+        <div class="content fade">
+            <h1>Mamá… ❤️</h1>
+
+
+            <p>
+                Eres mi lugar favorito en el mundo 💕<br>
+                Te amo muchísimo
+            </p>
+
+            <button onclick="mostrar()">Tócame</button>
+
+            <p id="mensaje" style="display:none; margin-top:20px;">
+                Con amor…<br>
+                tu Oliver 👶
+            </p>
+        </div>
+
+
+    </div>
+
+    <script>
+        const elements = document.querySelectorAll('.fade');
+
+        window.addEventListener('scroll', () => {
+            elements.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.classList.add('show');
+                }
+            });
+        });
+
+        function mostrar() {
+            document.getElementById("mensaje").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
